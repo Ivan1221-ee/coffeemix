@@ -259,6 +259,8 @@ dialog > p { margin-top: 18px; }
 @media (prefers-reduced-motion: no-preference) {
   dialog[open] { animation: reveal-dialog .22s ease-out; }
   @keyframes reveal-dialog { from { opacity: 0; transform: translateY(8px); } }
+}
+@media (min-width: 1181px) and (prefers-reduced-motion: no-preference) {
   .hero :is(h1, p), .text-revealed { animation: reveal-text .48s ease-out; }
   @keyframes reveal-text { from { opacity: 0; transform: translateY(14px); } }
 }
