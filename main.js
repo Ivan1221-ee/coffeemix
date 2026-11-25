@@ -6,7 +6,7 @@ const mobile = matchMedia('(max-width: 850px)');
 function setMenu(open, restoreFocus = false) {
   menu.classList.toggle('is-open', open);
   toggle.setAttribute('aria-expanded', String(open));
-  toggle.textContent = open ? 'Закрыть' : 'Меню';
+  toggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
   if (restoreFocus) toggle.focus();
 }
 toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
