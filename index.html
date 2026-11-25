@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <title>CoffeeMix — кофемашина Eletta perfetto</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="main.js?v=2" defer></script>
 </head>
 <body>
 <header class="site-header">
@@ -40,10 +40,26 @@
     <h2>Технологии, рождающие<br class="desktop-break"> идеальный вкус</h2>
     <div class="feature-grid">
       <img class="feature-photo" src="technology.jpg" alt="Кофемашина наливает эспрессо" width="2499" height="1666" loading="lazy">
-      <div class="feature-card"><p>Корпус из шлифованного алюминия</p></div>
-      <div class="feature-card"><p>Автоматическая система приготовления</p></div>
-      <div class="feature-card"><p>Функция приготовления двойного эспрессо</p></div>
-      <div class="feature-card"><p>Подача молочной пены одним касанием</p></div>
+      <article class="feature-card">
+        <img src="feature-body.jpg" alt="" width="1080" height="720" loading="lazy">
+        <button class="feature-toggle" type="button" aria-expanded="false" aria-controls="feature-body">Корпус из шлифованного алюминия</button>
+        <p class="feature-description" id="feature-body">Прочный металлический корпус сочетает долговечность, премиальную эстетику и простоту ухода.</p>
+      </article>
+      <article class="feature-card">
+        <img src="coffee-corner.png" alt="" width="1536" height="1024" loading="lazy">
+        <button class="feature-toggle" type="button" aria-expanded="false" aria-controls="feature-auto">Автоматическая система приготовления</button>
+        <p class="feature-description" id="feature-auto">Любимый кофе готовится одним нажатием, без сложных настроек и лишних действий.</p>
+      </article>
+      <article class="feature-card">
+        <img src="espresso.png" alt="" width="1536" height="1024" loading="lazy">
+        <button class="feature-toggle" type="button" aria-expanded="false" aria-controls="feature-double">Функция приготовления двойного эспрессо</button>
+        <p class="feature-description" id="feature-double">Две порции насыщенного эспрессо одновременно — для вас и ваших близких.</p>
+      </article>
+      <article class="feature-card">
+        <img src="feature-milk.jpg" alt="" width="1080" height="720" loading="lazy">
+        <button class="feature-toggle" type="button" aria-expanded="false" aria-controls="feature-milk">Подача молочной пены одним касанием</button>
+        <p class="feature-description" id="feature-milk">Нежная, воздушная молочная пена для идеального капучино или латте без усилий.</p>
+      </article>
     </div>
   </section>
 

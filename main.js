@@ -27,6 +27,26 @@ function updateHeader() {
 window.addEventListener('scroll', updateHeader, { passive: true });
 updateHeader();
 
+for (const button of document.querySelectorAll('.feature-toggle')) {
+  button.addEventListener('click', () => {
+    button.setAttribute('aria-expanded', String(button.getAttribute('aria-expanded') === 'false'));
+  });
+}
+
+if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  const revealText = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('text-revealed');
+      revealText.unobserve(entry.target);
+    }
+  }, { threshold: 0.15 });
+
+  for (const text of document.querySelectorAll('main > section:not(.hero) :is(h2, h3, p):not(.feature-description), .kit-list li')) {
+    revealText.observe(text);
+  }
+}
+
 function bindDialog(dialog, links, prepare = () => {}) {
   let opener;
   for (const link of links) {
