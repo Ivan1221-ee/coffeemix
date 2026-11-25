@@ -287,8 +287,8 @@ dialog > p { margin-top: 18px; }
     width: 44px;
     height: 44px;
     padding: 0;
-    border: 1px solid var(--ink);
-    background: var(--paper);
+    border: 0;
+    background: transparent;
     color: var(--ink);
   }
   .menu-toggle-icon { position: relative; width: 20px; height: 2px; background: currentColor; }
@@ -318,11 +318,7 @@ dialog > p { margin-top: 18px; }
   .header-menu.is-open, .header-menu nav { display: grid; gap: 16px; }
   .header-menu nav a { min-height: 44px; display: flex; align-items: center; }
   .hero h1 { font-size: clamp(63px, 9vw, 84px); }
-  .feature-grid { reading-flow: grid-rows; }
   .feature-card { aspect-ratio: auto; min-height: 190px; }
-  .feature-card-double { order: -1; grid-column: span 2; }
-  .feature-photo, .feature-card:last-child { order: 1; }
-  .feature-photo { grid-column: auto; height: 100%; min-height: 0; aspect-ratio: auto; }
   .one-touch-card { min-height: 270px; padding: 22px; }
   .one-touch-card h3 { font-size: 17px; }
   .morning, .kit { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
@@ -347,7 +343,10 @@ dialog > p { margin-top: 18px; }
   .hero-aside { grid-column: auto; flex-direction: row; justify-content: space-between; gap: 12px; }
   .hero-aside p { max-width: 53%; }
   .hero-aside img { width: min(43%, 16svh); }
-  .feature-grid, .lifestyle-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .feature-grid { grid-template-columns: minmax(0, 1fr); reading-flow: grid-rows; }
+  .feature-card-double { order: -1; }
+  .feature-photo, .feature-card:last-child { order: 1; }
+  .feature-photo { grid-column: auto; aspect-ratio: 2.1; }
   .feature-card { --card-padding: 15px; min-height: 156px; gap: 16px; }
   .feature-description { font-size: 13px; }
   .feature-toggle { font-size: 15px; }
@@ -356,7 +355,7 @@ dialog > p { margin-top: 18px; }
   .morning-side img { aspect-ratio: 1.4; }
   .morning-side { gap: 22px; }
   .one-touch-card { min-height: 204px; }
-  .lifestyle-grid { gap: 24px 15px; reading-flow: grid-rows; }
+  .lifestyle-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 15px; reading-flow: grid-rows; }
   .lifestyle-grid h3 { font-size: clamp(21px, 5.2vw, 30px); overflow-wrap: anywhere; }
   .lifestyle-design { grid-area: 1 / 2; }
   .lifestyle-cup { height: 100%; min-height: 180px; }
@@ -374,11 +373,6 @@ dialog > p { margin-top: 18px; }
   dialog { padding: 23px; }
   .result-actions .button { padding-inline: 14px; }
   .document { padding-top: 36px; }
-}
-@media (max-width: 440px) {
-  .feature-grid { grid-template-columns: minmax(0, 1fr); }
-  .feature-card-double { grid-column: auto; }
-  .feature-photo { height: auto; aspect-ratio: 2.1; }
 }
 @media (max-width: 360px) {
   .hero { grid-template-columns: minmax(0,3fr) minmax(0,2fr); gap: 14px 10px; padding-block: 20px; }
